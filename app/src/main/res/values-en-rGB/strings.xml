@@ -10,4 +10,5 @@
     <string name="botonNaturaleza">Alhambra\'s Nature</string>
     <string name="botonHistoria">Alhambra\'s History</string>
     <string name="botonArte">Alhambra\'s Art</string>
+    <string name="mensajeQR">Center the QR code</string>
 </resources>

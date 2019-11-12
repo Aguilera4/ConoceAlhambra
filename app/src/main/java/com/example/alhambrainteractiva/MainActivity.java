@@ -276,4 +276,10 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         startActivity(activity);
         //finish();
     }
+
+    public void lector(View v){
+        Intent activity = new Intent(MainActivity.this, LectorActivity.class);
+        startActivity(activity);
+        //finish();
+    }
 }

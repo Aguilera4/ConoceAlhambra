@@ -1218,6 +1218,7 @@ id botonArte
 id botonHistoria
 id botonMapa
 id botonNaturaleza
+id botonQR
 id botonSociedad
 id botonTutorial
 id bottom
@@ -1584,6 +1585,7 @@ string fab_transformation_sheet_behavior
 string google_maps_key
 string hide_bottom_view_on_scroll_behavior
 string infantil
+string mensajeQR
 string mtrl_chip_close_icon_content_description
 string password_toggle_content_description
 string path_password_eye
