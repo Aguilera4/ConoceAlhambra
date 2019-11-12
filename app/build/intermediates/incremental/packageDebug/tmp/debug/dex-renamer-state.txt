@@ -1,4 +1,4 @@
-#Tue Nov 12 17:17:20 CET 2019
+#Tue Nov 12 19:37:56 CET 2019
 base.0=C\:\\Users\\chris\\AndroidStudioProjects\\ConocelaAlhambra\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

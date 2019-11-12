@@ -78,7 +78,7 @@
 51-->C:\Users\chris\AndroidStudioProjects\ConocelaAlhambra\app\src\main\AndroidManifest.xml:34:9-36:71
 52            android:name="com.google.android.geo.API_KEY"
 52-->C:\Users\chris\AndroidStudioProjects\ConocelaAlhambra\app\src\main\AndroidManifest.xml:35:13-58
-53            android:value="AIzaSyCC2-0QReZHo7pq3fRNdc0a6e7RQM9I8xk" />
+53            android:value="AIzaSyDsC4KMOs7vZjOcfjP8KjFms0FO4IkLuek" />
 53-->C:\Users\chris\AndroidStudioProjects\ConocelaAlhambra\app\src\main\AndroidManifest.xml:36:13-68
 54
 55        <activity
