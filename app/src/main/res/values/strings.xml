@@ -1,0 +1,15 @@
+<!-- Fichero con los strings en español e ingles del proyecto -->
+
+<resources>
+    <string name="app_name">Conoce la Alhambra</string>
+    <string name="infantil">Modo Infantil</string>
+    <string name="adulto">Modo Adulto</string>
+    <string name="botonTutorial">¿Cómo funciona esta app?</string>
+    <string name="botonAlhambrapedia" translatable="false">Alhambrapedia</string>
+    <string name="botonMapa">Mapa</string>
+    <string name="botonQR">Lector QR</string>
+    <string name="botonSociedad">La sociedad en la Alhambra</string>
+    <string name="botonNaturaleza">La naturaleza en la Alhambra</string>
+    <string name="botonHistoria">La historia en la Alhambra</string>
+    <string name="botonArte">El arte en la Alhambra</string>
+</resources>

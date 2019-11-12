@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Meet The Alhambra</string>
+    <string name="adulto">Adult Mode</string>
+    <string name="botonTutorial">How does this app work?</string>
+    <string name="infantil">Child Mode</string>
+    <string name="botonMapa">Map</string>
+    <string name="botonQR">QR Code Reader</string>
+    <string name="botonSociedad">Alhambra\'s Society</string>
+    <string name="botonNaturaleza">Alhambra\'s Nature</string>
+    <string name="botonHistoria">Alhambra\'s History</string>
+    <string name="botonArte">Alhambra\'s Art</string>
+</resources>
