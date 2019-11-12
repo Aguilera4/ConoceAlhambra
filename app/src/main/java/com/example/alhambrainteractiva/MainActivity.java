@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     private GestureDetectorCompat detector;
     int GLOBAL_TOUCH_POSITION_Y = 0;
     int GLOBAL_TOUCH_CURRENT_POSITION_Y = 0;
+    private boolean multitouch = false;
 
     // Metodos
 
@@ -150,21 +151,25 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             int accion = event.getActionMasked();
             switch (accion)
             {
-                case MotionEvent.ACTION_DOWN:
-                    GLOBAL_TOUCH_POSITION_Y = (int) event.getY(1);
-                    break;
                 case MotionEvent.ACTION_MOVE:
+                    //Toast.makeText(this, "ACTION MOVE", Toast.LENGTH_SHORT).show();
                     GLOBAL_TOUCH_CURRENT_POSITION_Y = (int) event.getY(1);
                     int diff_y = GLOBAL_TOUCH_POSITION_Y-GLOBAL_TOUCH_CURRENT_POSITION_Y;
                     if (diff_y < -200) {
-                        accionMultitouch();
+                        multitouch=true;
                     }
                     break;
                 case MotionEvent.ACTION_POINTER_DOWN:
+                    //Toast.makeText(this, "ACTION POINTER DOWN", Toast.LENGTH_SHORT).show();
                     GLOBAL_TOUCH_POSITION_Y = (int) event.getY(1);
+                    multitouch=false;
                     break;
-                case MotionEvent.ACTION_UP:
-                    GLOBAL_TOUCH_CURRENT_POSITION_Y = 0;
+
+                case MotionEvent.ACTION_POINTER_UP:
+                    //Toast.makeText(this, "ACTION POINTER UP", Toast.LENGTH_SHORT).show();
+                    if(multitouch){
+                        accionMultitouch();
+                    }
                     break;
             }
         }else{
