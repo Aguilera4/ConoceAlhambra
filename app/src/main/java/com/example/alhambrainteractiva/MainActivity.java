@@ -211,6 +211,8 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
     public void accionMultitouch(){
         Toast.makeText(MainActivity.this,"Detectado Multitouch", Toast.LENGTH_SHORT).show();
+        Intent activity = new Intent(MainActivity.this, LectorActivity.class);
+        startActivity(activity);
     }
 
 
@@ -259,12 +261,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
     public void mapa(View v){
         Intent activity = new Intent(MainActivity.this, MapsActivity.class);
-        startActivity(activity);
-        //finish();
-    }
-
-    public void lector(View v){
-        Intent activity = new Intent(MainActivity.this, LectorActivity.class);
         startActivity(activity);
         //finish();
     }

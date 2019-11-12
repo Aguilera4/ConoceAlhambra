@@ -12,4 +12,5 @@
     <string name="botonNaturaleza">La naturaleza en la Alhambra</string>
     <string name="botonHistoria">La historia en la Alhambra</string>
     <string name="botonArte">El arte en la Alhambra</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

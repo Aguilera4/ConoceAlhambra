@@ -33,7 +33,7 @@ public class LectorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_lector);
 
         // VISTA A TRAVÉS DE LA CÁMARA
         cameraView = (SurfaceView) findViewById(R.id.camera_view);

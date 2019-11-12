@@ -1,130 +1,95 @@
 package com.example.alhambrainteractiva;
 
-import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.os.Build;
 import android.os.Bundle;
+import android.widget.Toast;
 
-import androidx.core.content.ContextCompat;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
-        LocationListener,GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener{
+    private Location currentLocation; // LOCALIZACIÓN ACTUAL
 
-    private GoogleMap mMap; // MAPA
-    Location mLastLocation; // ÚLTIMA LOCALIZACIÓN
-    Marker mCurrLocationMarker; // MARCADOR
-    GoogleApiClient mGoogleApiClient; // API
-    LocationRequest mLocationRequest; // PERMISOS
+    private FusedLocationProviderClient fusedLocationProviderClient;
+
+    private static final int LOCATION_REQUEST_CODE = 101; // CÓDIGO REQUERIDO EN LOS PERMISOS
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        // Obtención del SupportMapFragment
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
 
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
+        if (ActivityCompat.checkSelfPermission(MapsActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MapsActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] {android.Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST_CODE);
+            return;
+        }
+        fetchLastLocation();
+    }
+
+    // BUSCAR ÚLTIMA UBICACIÓN
+    private void fetchLastLocation(){
+        Task<Location> task = fusedLocationProviderClient.getLastLocation();
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location != null) {
+                    currentLocation = location;
+                    SupportMapFragment supportMapFragment= (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+                    supportMapFragment.getMapAsync(MapsActivity.this);
+                }else{
+                    Toast.makeText(MapsActivity.this,"Error: No Location recorded",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
-        // Se comprueban los permisos para usar la aplicación
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)
-                    == PackageManager.PERMISSION_GRANTED) {
-                buildGoogleApiClient();
-                mMap.setMyLocationEnabled(true);
-            }
-        }
-        else {
-            buildGoogleApiClient();
-            mMap.setMyLocationEnabled(true);
-        }
+        // LATITUD Y LONGITUD ACTUAL
+        LatLng latLng = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
+
+        // MARCADOR POSICIÓN ACTUAL
+        MarkerOptions markerOptions = new MarkerOptions().position(latLng);
+
+        googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+
+        // ZOOM
+        float zoomLevel = 16.5f;
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel));
+
+        // SE AÑADE EL MARCADOR
+        googleMap.addMarker(markerOptions);
 
     }
 
-    // Conexión de la API de Google para usar Maps
-    protected synchronized void buildGoogleApiClient() {
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .addApi(LocationServices.API).build();
-        mGoogleApiClient.connect();
-    }
-
+    // REQUERIMIENTO DE PERMISOS
     @Override
-    public void onConnected(Bundle bundle) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResult) {
+        switch (requestCode) {
+            case LOCATION_REQUEST_CODE:
+                if (grantResult.length > 0 && grantResult[0] == PackageManager.PERMISSION_GRANTED) {
+                    fetchLastLocation();
+                } else {
+                    Toast.makeText(MapsActivity.this,"Error: Location permission missing",Toast.LENGTH_SHORT).show();
+                }
+                break;
 
-        mLocationRequest = new LocationRequest(); // Localización
-        mLocationRequest.setInterval(1000);
-        mLocationRequest.setFastestInterval(1000);
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
-            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
         }
-
     }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-
-    }
-
-    @Override
-    public void onLocationChanged(Location location) {
-
-        mLastLocation = location;
-        if (mCurrLocationMarker != null) {
-            mCurrLocationMarker.remove();
-        }
-
-        // Marcador en la zona actual
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(latLng);
-        markerOptions.title("Posición Actual");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-        mCurrLocationMarker = mMap.addMarker(markerOptions);
-
-        // Desplazamiento de la cámara
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
-        float zoomLevel = 16.5f; //This goes up to 21
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel));
-
-        if (mGoogleApiClient != null) {
-            LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
-        }
-
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-
-    }
-
 }

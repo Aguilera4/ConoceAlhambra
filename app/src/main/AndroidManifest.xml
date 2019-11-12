@@ -2,7 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.alhambrainteractiva">
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
 
     <application
         android:allowBackup="true"
@@ -11,19 +21,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Modo_Infantil"></activity>
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCC2-0QReZHo7pq3fRNdc0a6e7RQM9I8xk" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
+        <activity android:name=".Modo_Infantil" />
         <activity android:name=".Modo_Adulto" />
-        <activity android:name=".LectorActivity"></activity>
-        <activity android:name=".MapsActivity"></activity>
-        <activity android:name=".Alhambrapedia"></activity>
-        <activity android:name=".Tutorial"></activity>
-        <activity android:name=".OpcionesAccesibilidad"></activity>
-        <activity android:name=".OpcionesIdioma"></activity>
-        <activity android:name=".OpcionesInformacion"></activity>
-        <activity android:name=".Sociedad"></activity>
-        <activity android:name=".Naturaleza"></activity>
-        <activity android:name=".Historia"></activity>
-        <activity android:name=".Arte"></activity>
+        <activity android:name=".LectorActivity" />
+        <activity android:name=".Alhambrapedia" />
+        <activity android:name=".Tutorial" />
+        <activity android:name=".OpcionesAccesibilidad" />
+        <activity android:name=".OpcionesIdioma" />
+        <activity android:name=".OpcionesInformacion" />
+        <activity android:name=".Sociedad" />
+        <activity android:name=".Naturaleza" />
+        <activity android:name=".Historia" />
+        <activity android:name=".Arte" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,16 +56,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
     </application>
-
-    <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
 
 </manifest>
