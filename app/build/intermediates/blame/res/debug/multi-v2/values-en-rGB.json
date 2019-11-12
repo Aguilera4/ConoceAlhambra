@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\chris\\AndroidStudioProjects\\ConocelaAlhambra-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
+            "outputFile": "C:\\Users\\chris\\AndroidStudioProjects\\ConocelaAlhambra\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
             "map": [
                 {
                     "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-2\\files-2.1\\fe5ea67f5a2af402cef601ea2b38d9df\\jetified-play-services-basement-17.0.0\\res\\values-en-rGB\\values.xml",
@@ -55,6 +55,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\chris\\AndroidStudioProjects\\ConocelaAlhambra\\app\\src\\main\\res\\values-en-rGB\\strings.xml",
+                    "from": {
+                        "startLines": "3,2,11,10,6,9,7,8,4,5",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "113,57,561,498,276,434,319,371,160,227",
+                        "endColumns": "45,54,53,61,41,62,50,61,65,47",
+                        "endOffsets": "154,107,610,555,313,492,365,428,221,270"
+                    },
+                    "to": {
+                        "startLines": "29,30,31,32,33,34,35,36,37,56",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2762,2808,2863,2917,2979,3021,3084,3135,3197,5911",
+                        "endColumns": "45,54,53,61,41,62,50,61,65,47",
+                        "endOffsets": "2803,2858,2912,2974,3016,3079,3130,3192,3258,5954"
+                    }
+                },
+                {
                     "source": "C:\\Users\\chris\\.gradle\\caches\\transforms-2\\files-2.1\\bd8a4935a17dde33dc1d62d4f9914d3b\\play-services-base-17.0.0\\res\\values-en-rGB\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -69,23 +86,6 @@
                         "startOffsets": "3263,3370,3554,3681,3790,4000,4125,4271,4600,4818,4925,5108,5235,5440,5618,5711,5803",
                         "endColumns": "106,183,126,108,209,124,145,131,217,106,182,126,204,177,92,91,107",
                         "endOffsets": "3365,3549,3676,3785,3995,4120,4266,4398,4813,4920,5103,5230,5435,5613,5706,5798,5906"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\chris\\AndroidStudioProjects\\ConocelaAlhambra-master\\app\\src\\main\\res\\values-en-rGB\\strings.xml",
-                    "from": {
-                        "startLines": "3,2,11,10,6,9,7,8,4,5",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "110,55,550,488,270,425,312,363,156,222",
-                        "endColumns": "45,54,53,61,41,62,50,61,65,47",
-                        "endOffsets": "151,105,599,545,307,483,358,420,217,265"
-                    },
-                    "to": {
-                        "startLines": "29,30,31,32,33,34,35,36,37,56",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "2762,2808,2863,2917,2979,3021,3084,3135,3197,5911",
-                        "endColumns": "45,54,53,61,41,62,50,61,65,47",
-                        "endOffsets": "2803,2858,2912,2974,3016,3079,3130,3192,3258,5954"
                     }
                 }
             ]
