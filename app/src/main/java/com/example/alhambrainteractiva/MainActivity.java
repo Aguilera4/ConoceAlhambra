@@ -1,6 +1,10 @@
 package com.example.alhambrainteractiva;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.hardware.Sensor;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 
 // Necesario para cambiar de Activities
@@ -38,6 +42,10 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     int GLOBAL_TOUCH_CURRENT_POSITION_Y = 0;
     private boolean multitouch = false;
 
+    //atributos para el manejo de sensores (proximidad, gravity y giroscopio)
+    SensorManager sensorManager;
+    SensorEventListener sensorListener = new SensoresListener(this);
+
     // Metodos
 
     // Se crea la actividad
@@ -47,6 +55,9 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         setContentView(R.layout.activity_main);
 
         //Toast.makeText(this, "Main OnCreate", Toast.LENGTH_SHORT).show();
+
+        //Se inicializa el sensorManager declarado
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
         // Icono de la app en el ActionBar
         ActionBar actionBar = getSupportActionBar();
@@ -94,6 +105,11 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     @Override
     protected void onResume() {
         super.onResume();
+        //Registro de los sensores
+        sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION), SensorManager.SENSOR_DELAY_FASTEST);
+        sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY), SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY), SensorManager.SENSOR_DELAY_NORMAL);
+
         //Toast.makeText(this, "Main OnResume", Toast.LENGTH_SHORT).show();
     }
 
@@ -101,6 +117,9 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     @Override
     protected void onPause() {
         super.onPause();
+        //"desregistrar" lo sensores
+        sensorManager.unregisterListener(sensorListener);
+
         //Toast.makeText(this, "Main OnPause", Toast.LENGTH_SHORT).show();
     }
 

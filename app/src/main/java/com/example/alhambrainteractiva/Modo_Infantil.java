@@ -1,6 +1,10 @@
 package com.example.alhambrainteractiva;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.hardware.Sensor;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 
 // Necesario para cambiar de Activities
@@ -33,7 +37,9 @@ public class Modo_Infantil extends AppCompatActivity implements GestureDetector.
     // Datos miembro
 
     private GestureDetectorCompat detector;
-
+    //atributos para el manejo de sensores (proximidad, gravity y giroscopio)
+    SensorManager sensorManager;
+    SensorEventListener sensorListener = new SensoresListener(this);
     // Metodos
 
     // La actividad está creada
@@ -43,7 +49,8 @@ public class Modo_Infantil extends AppCompatActivity implements GestureDetector.
         setContentView(R.layout.activity_modo__infantil);
 
         //Toast.makeText(this, "Infantil OnCreate", Toast.LENGTH_SHORT).show();
-
+        //Se inicializa el sensorManager declarado
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         // Icono de la app en el ActionBar
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
@@ -92,6 +99,10 @@ public class Modo_Infantil extends AppCompatActivity implements GestureDetector.
     @Override
     protected void onResume() {
         super.onResume();
+        //Registro de los sensores
+        sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION), SensorManager.SENSOR_DELAY_FASTEST);
+        sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY), SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY), SensorManager.SENSOR_DELAY_NORMAL);
         //Toast.makeText(this, "Infantil OnResume", Toast.LENGTH_SHORT).show();
     }
 
@@ -99,6 +110,8 @@ public class Modo_Infantil extends AppCompatActivity implements GestureDetector.
     @Override
     protected void onPause() {
         super.onPause();
+        //"desregistrar" lo sensores
+        sensorManager.unregisterListener(sensorListener);
         //Toast.makeText(this, "Infantil OnPause", Toast.LENGTH_SHORT).show();
     }
 
