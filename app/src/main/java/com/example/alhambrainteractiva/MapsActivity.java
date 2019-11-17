@@ -2,9 +2,11 @@ package com.example.alhambrainteractiva;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -19,10 +21,14 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+
+import java.util.HashMap;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -32,6 +38,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private static final int LOCATION_REQUEST_CODE = 101; // CÓDIGO REQUERIDO EN LOS PERMISOS
 
+    static final LatLng LEONES = new LatLng(37.177080, -3.589233);
+    static final LatLng REYES = new LatLng(37.177065, -3.588986);
+    static final LatLng COMARES = new LatLng(37.177574, -3.589640);
+    static final LatLng NAZARIES = new LatLng(37.177333, -3.589758 );
+    static final LatLng CARLOS = new LatLng(37.176807, -3.589948);
+
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +53,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
-        if (ActivityCompat.checkSelfPermission(MapsActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MapsActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST_CODE);
-            return;
-        }
         fetchLastLocation();
     }
 
@@ -91,6 +100,58 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // SE AÑADE EL MARCADOR
         googleMap.addMarker(markerOptions);
 
+        near(latLng,googleMap);
+
+    }
+
+    public void near(LatLng latLng, GoogleMap googleMap) {
+        if (Math.abs(latLng.latitude - LEONES.latitude) < 0.00045){
+            Marker leones = googleMap.addMarker(new MarkerOptions()
+                    .position(LEONES)
+                    .title("http://www.alhambra-patronato.es/edificios-lugares/patio-de-los-leones")
+                    .icon(BitmapDescriptorFactory
+                            .defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        }
+        if (Math.abs(latLng.latitude - REYES.latitude) < 0.00045){
+            Marker reyes = googleMap.addMarker(new MarkerOptions()
+                    .position(REYES)
+                    .title("http://www.alhambra-patronato.es/edificios-lugares/sala-de-los-reyes")
+                    .icon(BitmapDescriptorFactory
+                            .defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        }
+        if (Math.abs(latLng.latitude - COMARES.latitude) < 0.00045){
+            Marker comares = googleMap.addMarker(new MarkerOptions()
+                    .position(COMARES)
+                    .title("https://www.alhambradegranada.org/es/info/palaciosnazaries/torredecomares.asp")
+                    .icon(BitmapDescriptorFactory
+                            .defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        }
+        if (Math.abs(latLng.latitude - NAZARIES.latitude) < 0.00045){
+            Marker nazaries = googleMap.addMarker(new MarkerOptions()
+                    .position(NAZARIES)
+                    .title("https://www.alhambra.info/palacios-nazaries.html")
+                    .icon(BitmapDescriptorFactory
+                            .defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        }
+        if (Math.abs(latLng.latitude - CARLOS.latitude) < 0.00045){
+            Marker carlos = googleMap.addMarker(new MarkerOptions()
+                    .position(CARLOS)
+                    .title("http://www.alhambra-patronato.es/edificios-lugares/palacio-de-carlos-v")
+                    .icon(BitmapDescriptorFactory
+                            .defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        }
+        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
+        {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                String url = marker.getTitle();
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+                return true;
+            }
+
+        });
     }
 
     // REQUERIMIENTO DE PERMISOS

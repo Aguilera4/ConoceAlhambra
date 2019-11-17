@@ -60,24 +60,10 @@ public class LectorActivity extends AppCompatActivity {
             @Override
             public void surfaceCreated(SurfaceHolder holder) {
 
-                // VERIFICACIÓN DE LOS PERMISOS DE CÁMARA
-                if (ActivityCompat.checkSelfPermission(LectorActivity.this, Manifest.permission.CAMERA)
-                        != PackageManager.PERMISSION_GRANTED) {
-
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        // VERIFICACIÓN DE VERSIÓN Y PEDIDA DE PERMISOS
-                        if (shouldShowRequestPermissionRationale(
-                                Manifest.permission.CAMERA)) ;
-                        requestPermissions(new String[]{Manifest.permission.CAMERA},
-                                MY_PERMISSIONS_REQUEST_CAMERA);
-                    }
-                    return;
-                } else {
-                    try {
-                        cameraSource.start(cameraView.getHolder());
-                    } catch (IOException ie) {
-                        Log.e("CAMERA SOURCE", ie.getMessage());
-                    }
+                try {
+                    cameraSource.start(cameraView.getHolder());
+                } catch (IOException ie) {
+                    Log.e("CAMERA SOURCE", ie.getMessage());
                 }
             }
 

@@ -6,13 +6,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView9"
+    <Spinner
+        android:id="@+id/spinnerNaturaleza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Naturaleza"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="22dp"
+        android:entries="@array/Naturaleza"
+        app:layout_constraintBottom_toTopOf="@+id/textViewNaturaleza"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewNaturaleza"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="50dp"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/patronatoAlhambra2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="false"
+        android:linksClickable="false"
+        android:text="@string/patronato"
+        android:textIsSelectable="true"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNaturaleza" />
 </androidx.constraintlayout.widget.ConstraintLayout>

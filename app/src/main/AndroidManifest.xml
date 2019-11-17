@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.alhambrainteractiva">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -13,7 +12,7 @@
 
     <meta-data
         android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
+        android:value="AIzaSyDsC4KMOs7vZjOcfjP8KjFms0FO4IkLuek" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +21,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".CuestionarioInfantil"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -33,23 +32,22 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDsC4KMOs7vZjOcfjP8KjFms0FO4IkLuek" />
+            android:value="@string/google_maps_key" />
 
+        <activity android:name=".AprenderDatosCuriosos"/>
+        <activity android:name=".Giroscopio"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
         <activity android:name=".Modo_Infantil" />
         <activity android:name=".Modo_Adulto" />
-        <activity android:name=".LectorActivity" />
-        <activity android:name=".Alhambrapedia" />
-        <activity android:name=".Tutorial" />
-        <activity android:name=".OpcionesAccesibilidad" />
-        <activity android:name=".OpcionesIdioma" />
+        <activity android:name=".LectorActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".OpcionesInformacion" />
         <activity android:name=".Sociedad" />
         <activity android:name=".Naturaleza" />
         <activity android:name=".Historia" />
-        <activity android:name=".Arte" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

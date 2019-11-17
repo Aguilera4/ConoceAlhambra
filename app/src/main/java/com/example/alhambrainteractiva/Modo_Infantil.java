@@ -21,6 +21,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 // Necesario para comunicación con el usuario
+import android.view.View;
 import android.widget.Toast;
 
 // Necesario para gestionar ActionBar
@@ -40,6 +41,10 @@ public class Modo_Infantil extends AppCompatActivity implements GestureDetector.
     //atributos para el manejo de sensores (proximidad, gravity y giroscopio)
     SensorManager sensorManager;
     SensorEventListener sensorListener = new SensoresListener(this);
+
+    private boolean multitouch = false;
+    int GLOBAL_TOUCH_POSITION_Y = 0;
+    int GLOBAL_TOUCH_CURRENT_POSITION_Y = 0;
     // Metodos
 
     // La actividad está creada
@@ -51,6 +56,7 @@ public class Modo_Infantil extends AppCompatActivity implements GestureDetector.
         //Toast.makeText(this, "Infantil OnCreate", Toast.LENGTH_SHORT).show();
         //Se inicializa el sensorManager declarado
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
         // Icono de la app en el ActionBar
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
@@ -99,10 +105,10 @@ public class Modo_Infantil extends AppCompatActivity implements GestureDetector.
     @Override
     protected void onResume() {
         super.onResume();
-        //Registro de los sensores
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION), SensorManager.SENSOR_DELAY_FASTEST);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY), SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY), SensorManager.SENSOR_DELAY_NORMAL);
+
         //Toast.makeText(this, "Infantil OnResume", Toast.LENGTH_SHORT).show();
     }
 
@@ -110,7 +116,6 @@ public class Modo_Infantil extends AppCompatActivity implements GestureDetector.
     @Override
     protected void onPause() {
         super.onPause();
-        //"desregistrar" lo sensores
         sensorManager.unregisterListener(sensorListener);
         //Toast.makeText(this, "Infantil OnPause", Toast.LENGTH_SHORT).show();
     }
@@ -146,8 +151,42 @@ public class Modo_Infantil extends AppCompatActivity implements GestureDetector.
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        detector.onTouchEvent(event);
+        // Si detectamos multiples punteros
+        if (event.getPointerCount() == 2) {
+            int accion = event.getActionMasked();
+            switch (accion)
+            {
+                case MotionEvent.ACTION_MOVE:
+                    //Toast.makeText(this, "ACTION MOVE", Toast.LENGTH_SHORT).show();
+                    GLOBAL_TOUCH_CURRENT_POSITION_Y = (int) event.getY(1);
+                    int diff_y = GLOBAL_TOUCH_POSITION_Y-GLOBAL_TOUCH_CURRENT_POSITION_Y;
+                    if (diff_y < -100) {
+                        multitouch=true;
+                    }
+                    break;
+                case MotionEvent.ACTION_POINTER_DOWN:
+                    //Toast.makeText(this, "ACTION POINTER DOWN", Toast.LENGTH_SHORT).show();
+                    GLOBAL_TOUCH_POSITION_Y = (int) event.getY(1);
+                    multitouch=false;
+                    break;
+
+                case MotionEvent.ACTION_POINTER_UP:
+                    //Toast.makeText(this, "ACTION POINTER UP", Toast.LENGTH_SHORT).show();
+                    if(multitouch){
+                        accionMultitouch();
+                    }
+                    break;
+            }
+        }else{
+            if(detector.onTouchEvent(event)){return true;}
+        }
         return super.onTouchEvent(event);
+    }
+
+    public void accionMultitouch(){
+        Toast.makeText(Modo_Infantil.this,"Detectado Multitouch", Toast.LENGTH_SHORT).show();
+        Intent activity = new Intent(Modo_Infantil.this, LectorActivity.class);
+        startActivity(activity);
     }
 
     @Override
@@ -198,18 +237,29 @@ public class Modo_Infantil extends AppCompatActivity implements GestureDetector.
         super.onOptionsItemSelected(item);
 
         switch(item.getItemId()){
-            case R.id.Idioma:
+            /*case R.id.Idioma:
                 Toast.makeText(getBaseContext(), "Has seleccionado Idioma", Toast.LENGTH_SHORT).show();
-                break;
+                break;*/
 
-            case R.id.Accesibilidad:
+            /*case R.id.Accesibilidad:
                 Toast.makeText(getBaseContext(), "Has seleccionado Accesibilidad", Toast.LENGTH_SHORT).show();
-                break;
+                break;*/
 
             case R.id.Info:
-                Toast.makeText(getBaseContext(), "Has seleccionado Info", Toast.LENGTH_SHORT).show();
+                Intent activity = new Intent(Modo_Infantil.this, OpcionesInformacion.class);
+                startActivity(activity);
                 break;
         }
         return true;
+    }
+
+    public void aprender(View v){
+        Intent activity = new Intent(Modo_Infantil.this, AprenderDatosCuriosos.class);
+        startActivity(activity);
+    }
+
+    public void cuestionarioInfantil(View v){
+        Intent activity = new Intent(Modo_Infantil.this, CuestionarioInfantil.class);
+        startActivity(activity);
     }
 }

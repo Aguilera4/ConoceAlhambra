@@ -41,6 +41,11 @@ public class Modo_Adulto extends AppCompatActivity implements GestureDetector.On
     //atributos para el manejo de sensores (proximidad, gravity y giroscopio)
     SensorManager sensorManager;
     SensorEventListener sensorListener = new SensoresListener(this);
+
+    private boolean multitouch = false;
+    int GLOBAL_TOUCH_POSITION_Y = 0;
+    int GLOBAL_TOUCH_CURRENT_POSITION_Y = 0;
+
     // Metodos
 
     // Se crea la actividad
@@ -52,6 +57,7 @@ public class Modo_Adulto extends AppCompatActivity implements GestureDetector.On
         //Toast.makeText(this, "Adulto OnCreate", Toast.LENGTH_SHORT).show();
         //Se inicializa el sensorManager declarado
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
         // Icono de la app en el ActionBar
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
@@ -100,6 +106,46 @@ public class Modo_Adulto extends AppCompatActivity implements GestureDetector.On
 */
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        // Si detectamos multiples punteros
+        if (event.getPointerCount() == 2) {
+            int accion = event.getActionMasked();
+            switch (accion)
+            {
+                case MotionEvent.ACTION_MOVE:
+                    //Toast.makeText(this, "ACTION MOVE", Toast.LENGTH_SHORT).show();
+                    GLOBAL_TOUCH_CURRENT_POSITION_Y = (int) event.getY(1);
+                    int diff_y = GLOBAL_TOUCH_POSITION_Y-GLOBAL_TOUCH_CURRENT_POSITION_Y;
+                    if (diff_y < -100) {
+                        multitouch=true;
+                    }
+                    break;
+                case MotionEvent.ACTION_POINTER_DOWN:
+                    //Toast.makeText(this, "ACTION POINTER DOWN", Toast.LENGTH_SHORT).show();
+                    GLOBAL_TOUCH_POSITION_Y = (int) event.getY(1);
+                    multitouch=false;
+                    break;
+
+                case MotionEvent.ACTION_POINTER_UP:
+                    //Toast.makeText(this, "ACTION POINTER UP", Toast.LENGTH_SHORT).show();
+                    if(multitouch){
+                        accionMultitouch();
+                    }
+                    break;
+            }
+        }else{
+            if(detector.onTouchEvent(event)){return true;}
+        }
+        return super.onTouchEvent(event);
+    }
+
+    public void accionMultitouch(){
+        Toast.makeText(Modo_Adulto.this,"Detectado Multitouch", Toast.LENGTH_SHORT).show();
+        Intent activity = new Intent(Modo_Adulto.this, LectorActivity.class);
+        startActivity(activity);
+    }
+
     // La actividad está a punto de hacerse visible
     @Override
     protected void onStart() {
@@ -111,10 +157,10 @@ public class Modo_Adulto extends AppCompatActivity implements GestureDetector.On
     @Override
     protected void onResume() {
         super.onResume();
-        //Registro de los sensores
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION), SensorManager.SENSOR_DELAY_FASTEST);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY), SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY), SensorManager.SENSOR_DELAY_NORMAL);
+
         //Toast.makeText(this, "Adulto OnResume", Toast.LENGTH_SHORT).show();
     }
 
@@ -122,7 +168,6 @@ public class Modo_Adulto extends AppCompatActivity implements GestureDetector.On
     @Override
     protected void onPause() {
         super.onPause();
-        //"desregistrar" lo sensores
         sensorManager.unregisterListener(sensorListener);
         //Toast.makeText(this, "Adulto OnPause", Toast.LENGTH_SHORT).show();
     }
@@ -156,11 +201,12 @@ public class Modo_Adulto extends AppCompatActivity implements GestureDetector.On
     // ********************* Gestion de eventos táctiles ************************ //
     // ************************************************************************** //
 
+    /*
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         detector.onTouchEvent(event);
         return super.onTouchEvent(event);
-    }
+    }*/
 
     @Override
     public boolean onDown(MotionEvent e) {
@@ -210,16 +256,17 @@ public class Modo_Adulto extends AppCompatActivity implements GestureDetector.On
         super.onOptionsItemSelected(item);
 
         switch(item.getItemId()){
-            case R.id.Idioma:
+            /*case R.id.Idioma:
                 Toast.makeText(getBaseContext(), "Has seleccionado Idioma", Toast.LENGTH_SHORT).show();
-                break;
+                break;*/
 
-            case R.id.Accesibilidad:
+            /*case R.id.Accesibilidad:
                 Toast.makeText(getBaseContext(), "Has seleccionado Accesibilidad", Toast.LENGTH_SHORT).show();
-                break;
+                break;*/
 
             case R.id.Info:
-                Toast.makeText(getBaseContext(), "Has seleccionado Info", Toast.LENGTH_SHORT).show();
+                Intent activity = new Intent(Modo_Adulto.this, OpcionesInformacion.class);
+                startActivity(activity);
                 break;
         }
         return true;
@@ -243,9 +290,5 @@ public class Modo_Adulto extends AppCompatActivity implements GestureDetector.On
         //finish();
     }
 
-    public void arte(View v){
-        Intent activity = new Intent(Modo_Adulto.this, Arte.class);
-        startActivity(activity);
-        //finish();
-    }
+
 }

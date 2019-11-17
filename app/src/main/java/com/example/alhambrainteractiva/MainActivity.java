@@ -2,15 +2,19 @@ package com.example.alhambrainteractiva;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
 
 // Necesario para cambiar de Activities
 import android.content.Intent;
 
 // Necesario para deteccion de movimientos táctiles
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GestureDetectorCompat;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -41,10 +45,11 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     int GLOBAL_TOUCH_POSITION_Y = 0;
     int GLOBAL_TOUCH_CURRENT_POSITION_Y = 0;
     private boolean multitouch = false;
-
-    //atributos para el manejo de sensores (proximidad, gravity y giroscopio)
+    private static final int LOCATION_REQUEST_CODE = 101; // CÓDIGO REQUERIDO EN LOS PERMISOS
+    private final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
     SensorManager sensorManager;
     SensorEventListener sensorListener = new SensoresListener(this);
+
 
     // Metodos
 
@@ -55,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         setContentView(R.layout.activity_main);
 
         //Toast.makeText(this, "Main OnCreate", Toast.LENGTH_SHORT).show();
-
         //Se inicializa el sensorManager declarado
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
@@ -105,11 +109,9 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     @Override
     protected void onResume() {
         super.onResume();
-        //Registro de los sensores
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION), SensorManager.SENSOR_DELAY_FASTEST);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY), SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY), SensorManager.SENSOR_DELAY_NORMAL);
-
         //Toast.makeText(this, "Main OnResume", Toast.LENGTH_SHORT).show();
     }
 
@@ -117,9 +119,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     @Override
     protected void onPause() {
         super.onPause();
-        //"desregistrar" lo sensores
         sensorManager.unregisterListener(sensorListener);
-
         //Toast.makeText(this, "Main OnPause", Toast.LENGTH_SHORT).show();
     }
 
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                     //Toast.makeText(this, "ACTION MOVE", Toast.LENGTH_SHORT).show();
                     GLOBAL_TOUCH_CURRENT_POSITION_Y = (int) event.getY(1);
                     int diff_y = GLOBAL_TOUCH_POSITION_Y-GLOBAL_TOUCH_CURRENT_POSITION_Y;
-                    if (diff_y < -200) {
+                    if (diff_y < -100) {
                         multitouch=true;
                     }
                     break;
@@ -259,20 +259,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         super.onOptionsItemSelected(item);
         Intent activity;
         switch(item.getItemId()){
-            case R.id.Idioma:
-                activity = new Intent(MainActivity.this, OpcionesIdioma.class);
-                startActivity(activity);
-                //finish();
-                //Toast.makeText(getBaseContext(), "Has seleccionado Idioma", Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.Accesibilidad:
-                activity = new Intent(MainActivity.this, OpcionesAccesibilidad.class);
-                startActivity(activity);
-                //finish();
-                //Toast.makeText(getBaseContext(), "Has seleccionado Accesibilidad", Toast.LENGTH_SHORT).show();
-                break;
-
             case R.id.Info:
                 activity = new Intent(MainActivity.this, OpcionesInformacion.class);
                 startActivity(activity);
@@ -284,25 +270,50 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     }
 
     public void mapa(View v){
-        Intent activity = new Intent(MainActivity.this, MapsActivity.class);
-        startActivity(activity);
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST_CODE);
+            return;
+        }
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST_CODE);
+            Intent activity = new Intent(MainActivity.this, MapsActivity.class);
+            startActivity(activity);
+        }
         //finish();
     }
 
-    public void tutorial(View v){
-        Intent activity = new Intent(MainActivity.this, Tutorial.class);
-        startActivity(activity);
-        //finish();
-    }
-
-    public void alhambrapedia(View v){
-        Intent activity = new Intent(MainActivity.this, Alhambrapedia.class);
-        startActivity(activity);
-        //finish();
-    }
 
     public void lector(View v){
-        Intent activity = new Intent(MainActivity.this, LectorActivity.class);
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                // VERIFICACIÓN DE VERSIÓN Y PEDIDA DE PERMISOS
+                if (shouldShowRequestPermissionRationale(
+                        Manifest.permission.CAMERA)) ;
+                requestPermissions(new String[]{Manifest.permission.CAMERA},
+                        MY_PERMISSIONS_REQUEST_CAMERA);
+            }
+            return;
+        }
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED) {
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                // VERIFICACIÓN DE VERSIÓN Y PEDIDA DE PERMISOS
+                if (shouldShowRequestPermissionRationale(
+                        Manifest.permission.CAMERA)) ;
+                requestPermissions(new String[]{Manifest.permission.CAMERA},
+                        MY_PERMISSIONS_REQUEST_CAMERA);
+            }
+            Intent activity = new Intent(MainActivity.this, LectorActivity.class);
+            startActivity(activity);
+        }
+        //finish();
+    }
+
+    public void giroscopio(View v){
+        Intent activity = new Intent(MainActivity.this, Giroscopio.class);
         startActivity(activity);
         //finish();
     }

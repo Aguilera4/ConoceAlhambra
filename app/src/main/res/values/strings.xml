@@ -4,14 +4,161 @@
     <string name="app_name">Conoce la Alhambra</string>
     <string name="infantil">Modo Infantil</string>
     <string name="adulto">Modo Adulto</string>
-    <string name="botonTutorial">¿Cómo funciona esta app?</string>
-    <string name="botonAlhambrapedia" translatable="false">Alhambrapedia</string>
-    <string name="botonMapa">Mapa</string>
-    <string name="botonQR">Lector QR</string>
-    <string name="botonSociedad">La sociedad en la Alhambra</string>
-    <string name="botonNaturaleza">La naturaleza en la Alhambra</string>
-    <string name="botonHistoria">La historia en la Alhambra</string>
+    <string name="botonTutorial"><b>¿Cómo funciona esta app?</b></string>
+    <string name="botonAlhambrapedia" translatable="false"><b>Alhambrapedia</b></string>
+    <string name="botonMapa"><b>¿Dónde estoy?</b></string>
+    <string name="botonQR"><b>Lector QR</b></string>
+    <string name="botonGiroscopio" translatable="false"><b>Alhambra 360º</b></string>
+    <string name="botonSociedad"><b>La sociedad en la Alhambra</b></string>
+    <string name="botonNaturaleza"><b>La naturaleza en la Alhambra</b></string>
+    <string name="botonHistoria"><b>La historia en la Alhambra</b></string>
     <string name="botonArte">El arte en la Alhambra</string>
-    <string name="title_activity_maps" translatable ="false">Map</string>
+    <string name="title_activity_maps" translatable="false">Map</string>
     <string name="mensajeQR">Encuadre el código QR</string>
+    <string name="version"><b><font fgcolor='#0000FF'>Versión:</font></b> <font fgcolor='#000000'>1.0</font> </string>
+    <string name="autores"><b><font fgcolor="#0000FF"> Autores:</font></b> <font fgcolor="#000000"> \t\t Alberto Lejárraga Rubio  \t\t Christian Vigil Zamora  \t\t Francisco Cano Sampedro  \t\t Sergio Aguilera Ramírez </font></string>
+    <string name="aprender"><b>Aprender</b></string>
+    <string name="cuestionario" translatable="false"><b>Cuestionario</b></string>
+    <string name="sabiasQueBoton" translatable="false"><b>Sabías que...</b></string>
+    <string name="sabiasQue" translatable="false"><b><font fgcolor='#000000' size="30">Sabías que ... </font></b></string>
+
+    <string name="datoCurioso1" translatable="false"><b><font fgcolor='#424242'>- En la Alhambra vivía el monarca junto a la corte del Reino Nazarí de Granada. </font></b></string>
+    <string name="datoCurioso2" translatable="false"><b><font fgcolor='#424242'>- La fuente de los leoes consta de 12 leones  </font></b></string>
+    <string name="datoCurioso3" translatable="false"><b><font fgcolor='#424242'>- La Alhambra se divide en las siguientes zonas: \n\t\t   la Alcazaba \n\t\t    los Palacios Nazaríes \n\t\t   la Medina \n\t\t   el Generalife \n\t\t   la Rauda \n\t\t  el Palacio de Carlos V. </font></b></string>
+    <string name="datoCurioso4" translatable="false"><b><font fgcolor='#424242'>- La Alhambra dispone de 23 torres. </font></b></string>
+    <string name="datoCurioso5" translatable="false"><b><font fgcolor='#424242'>- La puerta que custodia el acceso a la Alhambra es conocida
+        como la Puerta de la Justicia. Sobre ella y su grandeza reza una leyenda: si existiese un caballero en la Tierra que al pasar a caballo bajo su arco exterior fuese capaz de tocar con la punta de su lanza la mano esculpida en lo más alto, suyo sería el trono del reino de Granada. </font></b></string>
+    <string name="datoCurioso6" translatable="false"><b><font fgcolor='#424242'>- En una de las últimas obras de rehabilitación, los restauradores descubrieron 80 dibujos policromados con figuras animales y humanas que permanecían ocultos bajo la madera y el yeso desde la época de la dominación musulmana. </font></b></string>
+    <string name="datoCurioso7" translatable="false"><b><font fgcolor='#424242'>- La Alhambra empezó a construirse en el siglo IX.  </font></b></string>
+    <string name="datoCurioso8" translatable="false"><b><font fgcolor='#424242'>- La Alhambra esta construida sobre la colina de la Sabika. </font></b></string>
+    <string name="datoCurioso9" translatable="false"><b><font fgcolor='#424242'>- Las entradas de la Alhambra son: \n\t\t Puerta de la Justicia \n\t\t Plaza de los Aljibes \n\t\t Puerta del Vino  \n\t\t Puerta de las armas \n\t\t Puerta de los siete cielos</font></b></string>
+    <string name="datoCurioso10" translatable="false"><b><font fgcolor='#424242'>- La Alcazaba era un barrio militar, en el que vivían los soldados separados de resto de la Alhambra. \n Estaba rodeado de murallas y torres de vigilancia. Tenía dos puertas al exterior, construidas «en recodo» que estaban custodiadas
+    por soldados, para que nadie pudiese pasar
+    sin ser visto.</font></b></string>
+    <string name="datoCurioso11" translatable="false"><b><font fgcolor='#424242'>- En la Alcazaba no había agua, ningunafuente o nacimiento para abastecer lasnecesidades de la población. Por eso una de las primeras actuaciones que sehicieron, fue construir una acequia paratraer agua del río Darro: la Acequia Real yun aljibe. El aljibe era un depósito dónde
+    el agua de la acequia entraba, reposaba,se limpiaba y se almacenaba lista para eluso público. Observa en el esquema, el aljibe de la Alcazaba.</font></b></string>
+    <string name="datoCurioso12" translatable="false"><b><font fgcolor='#424242'>- La Madraza de los Príncipes era una escuela-universidad que  crearon los árabes con la idea de que  asistieran personas de todas las religiones a estudiar ciencia y filosofía.  Ésta de la Alhambra, era exclusiva de  la familia real. Además de la sala de
+    estudio, tenía una pila de abluciones, un oratorio y otras estancias para los funcionarios.</font></b></string>
+
+
+     <string name="patioLeones" translatable="false"><b><font fgcolor='#000000'>Patio de los Leones</font></b></string>
+    <string name="salaReyes" translatable="false"><b><font fgcolor='#000000'>Sala de los Reyes</font></b></string>
+    <string name="generalife" translatable="false"><b><font fgcolor='#000000'>Generalife</font></b></string>
+    <string name="salaMocarabes" translatable="false"><b><font fgcolor='#000000'>Sala de Mocárabes</font></b></string>
+    <string name="salaBarca" translatable="false"><b><font fgcolor='#000000'>Sala de la Barca</font></b></string>
+
+    <string name="question">Pregunta</string>
+    <string name="check">Comprobar</string>
+    <string name="correct">¡Muy bien!</string>
+    <string name="incorrect">Incorrecto...</string>
+    <string name="next">Siguiente</string>
+    <string name="finish">Terminar</string>
+    <string name="prev">Anterior</string>
+    <string name="results">Resultados</string>
+    <string name="start_over">Volver a empezar</string>
+
+    <array name="all_questions">
+        <item>¿Cuantos leones tiene la fuente de los leones?;5;7;*12;11</item>
+        <item>¿En que siglo se empezó a construir la Alhambra?;X;XI;VIII;*IX</item>
+        <item>¿Que significa Alhambra?;*Fortaleza Roja;Fortaleza Gigante;Muro Nazarí;Ciudad Antigua</item>
+        <item>¿Cuantas entradas tiene la Alhambra?;3;4;2;*5</item>
+        <item>¿Que es una Medina?;Un palacio Nazarí;Un jardín de la Alhambra;*Una ciudad amurallada;Una Puerta</item>
+    </array>
+    <string name="siglo">Siglos</string>
+    <string name="sigloA">Los árabes respetaron las ciudades y vías romanas ampliándolas y añadiéndoles nuevas fundaciones. En el siglo IX existen noticias de construcciones en la colina de la Sabika, donde posteriormente se levantará la Alhambra, aunque se cree que ya en época romana e incluso antes debió haber alguna edificación. Tras la guerra civil que sucedió al Califato de Córdoba(1031), la capital de la hasta entonces provincia granadina, se traslada de Elvira a Granada, con el Reino de Taifa granadino de los Ziríes. Estos establecen su corte en la Alcazaba Cadima o Vieja, situada en el barrio del Albaicín.
+\n\n
+A sus faldas existía un núcleo de población importante, fundamentalmente judía, en torno al cual se produce el desarrollo de la ciudad de Granada. El primer ministro Samuel ibn Nagrella, reconstruye las abandonadas edificaciones de la colina de la Sabika e instala en ella su Palacio.
+\n\n
+En el siglo XII, las sucesivas oleadas de Almorávides y Almohades, ocasionan en Granada diversas luchas que tienen como escenario la Alcazaba del Albaicín y las construcciones que existían en la colina de la Sabika, sirviendo ésta de refugio unas veces a los partidarios locales andalusíes y otras a los invasores norte africanos.
+    </string>
+    <string name="sigloB">
+Al-Ahmar, fundador de la Dinastía nazarí, se instala en 1238 en la Antigua Alcazaba del Albaicín, llamándole la atención las ruinas de la colina de la Alhambra. Decide así iniciar su reconstrucción e instalar en ella la sede de la corte, comenzando la edificación de la Alhambra que hoy conocemos.
+\n\n
+La Alhambra fue palacio, ciudadela y fortaleza, residencia de los sultanes nazaríes y de los altos funcionarios, servidores de la corte y de soldados de élite; alcanza su esplendor en la segunda mitad del siglo XIV, coincidiendo con los sultanatos de Yusuf I (1333-1354) y el segundo reinado de Muhammad V (1362-1391).
+\n\n
+Granada, capital del reino nazarí, va recibiendo paulatinamente poblaciones musulmanas a causa del avance de la conquista cristiana. La ciudad va creciendo, modificándose, creando nuevos barrios y ampliando las cercas y murallas prácticamente hasta su conquista al final del siglo XV.
+    </string>
+    <string name="sigloC">
+Después de 1492, la Alhambra quedó establecida como Casa Real con jurisdicción exenta a cargo del Tendilla. Los Reyes Católicos ordenaron intensas reparaciones sirviéndose en gran medida de artesanos moriscos.
+\n\n
+El Emperador Carlos V decide, en 1526, la construcción del palacio que lleva su nombre, junto a otras construcciones muy significativas de gusto renacentista romano. La casa de Austria continuó desde Felipe II (1556-1598) y sus sucesores al cargo de la conservación de la Alhambra, admirada por humanistas y artistas como Andrea Navaggiero (1524), embajador de Venecia en la Corte de Carlos V.
+\n\n
+En las primeras décadas del siglo XVIII, Felipe V (1700-1746) desposee de la alcaldía al Marqués de Mondéjar, heredero del Conde de Tendilla, comenzando una etapa de abandono prácticamente hasta el reinado de Carlos IV (1788-1808).
+    </string>
+    <string name="sigloD">
+La ocupación napoleónica supuso un episodio negativo para la Alhambra, por la voladura en 1812, al retirarse el ejército francés. Sólo el arrojo de un soldado español pudo evitar casi su total destrucción.
+\n\n
+A una etapa de reivindicaciones acerca del estado del monumento, secundadas activamente por Washington Irving (1783-1859) se suma un creciente interés de la sociedad por los jardines de la Alhambra y el orientalismo que evoca en el imaginario romántico, muy bien reflejado en las artes plásticas del momento.
+\n\n
+Con la revolución de 1868 la Alhambra queda desligada de la Corona y pasa al dominio del Estado, declarándose en 1870 “monumento nacional”.
+\n\n
+Con la entrada del siglo XX, el cuidado de la Alhambra se confía a una Comisión (1905), sustituida en 1913 por un Patronato que en 1915 pasa a depender de la Dirección General de Bellas Artes. En 1944 se crea un nuevo Patronato que se mantiene hasta el traspaso a la Comunidad Autónoma de Andalucía de las funciones y servicios del Estado en materia de cultura.
+    </string>
+    <string name="patronato">Información obtenida de http://www.alhambra-patronato.es</string>
+    <string name="nombreCuerpoMilitar">El cuerpo militar</string>
+    <string name="cuerpoMilitar">
+        Un recinto militar para guardia de élite garantizaba desde la Alcazaba la seguridad interior del Sultán, su familia y las Instituciones del Gobierno. La Alcazaba era como una ciudad castrense independiente, estratégicamente situada y comunicada sabiamente con el resto de la Alhambra, en la que vivía la propia guardia con su familia, dotada de viviendas, aljibe, baño,… como cualquier barrio de una ciudad.
+    </string>
+    <string name="nombreSultan">El Sultán y su familia</string>
+    <string name="sultanYFamilia">
+    Existía un área palacial reservada a la vida del Sultán y su familia más allegada. En ella había oficinas de carácter administrativo, con una distribución claramente protocolaria, haciéndose más privada y áulica según se penetraba en sus dependencias. También había espacios para la reunión de la Sura o Consejo de Visires (ministros) y para las audiencias públicas. El Sultán convocaba fiestas cortesanas coincidiendo con celebraciones destacadas del calendario musulmán o del Estado.
+    \n\n
+    En este área palatina se distribuyen varios palacios, edificados en distintas épocas, bien mediante la adaptación y redecoración de su antecedente, o bien mediante la construcción o la adicción de un nuevo palacio en su solar. Una calle, que daba acceso a los diversos recintos de los palacios servía también para separarlos y aislarlos del resto de la Alhambra.
+    </string>
+    <string name="nombreSirvientes">Los sirvientes de la Corte</string>
+    <string name="sirvientes">
+    Al servicio de esta corte estaba la Medina de la Alhambra, toda una ciudad pensada para cubrir cualquier necesidad del Palacio. Organizada en torno a una calle principal que asciende suavemente de oeste a este, la ciudad estaba dotada de baños públicos, mezquita, comercios, etc.
+    \n\n
+    En la zona baja, tras la Puerta del Vino que le servía de entrada principal había casas, algunas de ellas muy importantes, donde vivían funcionarios y servidores de la Corte, pequeños aljibes y espacios públicos.
+    </string>
+    <string name="nombreArtesanos">Los artesanos</string>
+    <string name="artesanos">
+    La zona alta de la ciudad la ocupaba todo un entremado de pequeñas industrias artesanas: hornos para vidrio y cerámica, tenería para curtidos, norias e incluso una ceca para acuñar moneda.
+    \n\n
+    La acequia del Rey (o del Sultán) entraba en la Alhambra por esta zona, mediante un acueducto y un partidor, descendiendo paralela a la Calle Real repartiendo el agua a todo el recinto por un sinfín de canalizaciones. Pequeñas callecitas, callejones y cobertizos completaban el paisaje urbano de la ciudad.
+    </string>
+    <string name="nombreIntroNaturaleza">Introducción</string>
+    <string name="introNaturaleza">
+El Conjunto Monumental de la Alhambra y Generalife representa un valioso paisaje cultural, una gran unidad ambiental, formada por diferentes unidades de vegetación capaz de albergar una rica y variada biodiversidad.
+\n\n
+El singular paisaje cultural de la Alhambra es el resultado de la interacción en el tiempo de las personas y el medio natural, cuya expresión es un territorio percibido y valorado por sus cualidades culturales, producto de un dilatado proceso y a su vez, soporte de la identidad de una comunidad.
+\n\n
+La Alhambra Verde es la parte viva (flora y fauna) del conjunto monumental y el territorio natural (suelos) sobre el que se asienta, las relaciones entre los distintos organismos…el ecosistema o conjunto de ecosistemas del paisaje cultural de la Alhambra. Los jardines, las huertas y terrenos de cultivos y los bosques.
+    </string>
+    <string name="nombreBio">Biodiversidad</string>
+    <string name="bio">
+    El Conjunto Monumental de la Alhambra y el Generalife representa un valioso paisaje cultural, una gran unidad ambiental, compuesta por distintos ecosistemas, capaz de albergar una rica y variada biodiversidad.
+    \n\n
+    El singular paisaje cultural de la Alhambra es el resultado de la interacción en el tiempo de las personas y el medio natural, cuya expresión es un territorio percibido y valorado por sus cualidades culturales, producto de un dilatado proceso y a su vez, soporte de la identidad de una comunidad.
+    \n\n
+    La Alhambra Verde es, por tanto, la parte viva (flora y fauna) del conjunto monumental y el territorio natural (suelos) sobre el que se asienta, las relaciones entre los distintos organismos, es decir el ecosistema o conjunto de ecosistemas del paisaje cultural de la Alhambra.
+    \n\n
+    El Conjunto Monumental de la Alhambra y el Generalife, dispone de una riqueza patrimonial que va más allá de su estructura arquitectónica y de los elementos decorativos que la embellecen. La naturaleza cohesiona valores como el patrimonio, el paisaje o la biodiversidad, creando una simbiosis perfecta entre ellos y haciendo posible llevar a cabo una propuesta integral de protección y conservación.
+    \n\n
+    La Alhambra verde es un conjunto de ecosistemas capaces de aportar importantes servicios ambientales, servicios que la naturaleza emana y proporciona a la sociedad, como son los servicios de regulación (mejora de la calidad del aire, regulación climática, retención del suelo, recarga de acuíferos,etc.), y los servicios culturales (disfrute espiritual, actividades recreativas, etc.)
+    </string>
+    <string name="nombreBosques">Bosques</string>
+    <string name="bosques">
+    La Alhambra y el Generalife alberga en su entorno más de 150.000 metros cuadrados (15 ha.) de frondosos bosques de gran valor recreativo y paisajístico, que complementan y enriquecen el patrimonio artístico y cultural del conjunto monumental. Estas espacios masas de vegetación tienen además un importante papel en el control de la erosión, en la mejora de la calidad del aire y del ambiente circundantes (control de temperaturas, emisión de O2, etc) además de servir de refugio para una variada fauna y contribuir así a la conservación y fomento de la diversidad biológica en plena ciudad de Granada .
+    \n\n
+    Se reparten fundamentalmente en cuatro unidades diferenciadas: El Bosque de La Alhambra o San Pedro, la Alameda de la Alhambra o Gomérez, la Umbría del Generalife y la Dehesa del Generalife.
+    \n\n
+    El bosque de la Alhambra, conocido también como bosque de San Pedro, es una arboleda cultivada, situada en la ladera norte del recinto amurallado de la Alhambra. Se trata de un bosque cerrado y umbrío, abrazado en su totalidad por una cerca (tapia) y por la muralla norte de la Alhambra. Su origen, parece remontarse a la época medieval. Según Pérez de Hita, este bosque fue creado para albergar un coto de caza destinado al uso y disfrute del sultán Muley Hazen. Su uso cinegético perduraría hasta principios del siglo XVII, según atestiguan numerosas citas.
+    </string>
+    <string name="nombreHuertas">Huertas</string>
+    <string name="huertas">
+    Junto a la ciudad palatina de la Alhambra se encuentra la almunia del Generalife. A pesar de que hoy en día se recorren en una misma visita y se perciben como un conjunto integrado, gracias al moderno Puente del Agua que las une, originalmente se trataba de dos realidades completamente diferentes. Por un lado la ciudad de la Alhambra, un espacio militar, político y público, con su Alcazaba, Palacios y Medina y por otro la almunia del Generalife, un espacio para el ocio y disfrute del Sultán, un espacio privado, con estancias palaciegas, jardines, frescos vergeles en verano y unas huertas para la producción de abundantes frutas y hortalizas…un paraíso en la tierra.
+    \n\n
+    Las huertas resuelven la fuerte pendiente del barranco en el que se asientan, mediante la construcción de grandes muros de tapial que permiten la creación de ámplias terrazas o paratas, originalmente separadas entre ellas por fuertes pendientes. Las acequias se adaptan a la suave pendiente dentro de cada parata y pasan de unas a otras salvando por sus extremos la diferencia de cotas. El paisaje agrícola de las huertas es reflejo de sus valores históricos, culturales y paisajísticos, presentes desde su creación y preservados a lo largo del tiempo.
+    </string>
+    <string name="nombreJardines">Jardines</string>
+    <string name="jardines">
+    El Conjunto Monumental de la Alhambra y el Generalife cuenta con un extenso territorio ajardinado de cerca de 12 has. Espacios cultivados, jardines, palacios y otros recintos edificados, conforman una simbiosis perfecta capaz de generar espacios con un carácter cambiante y temporal, donde el componente vegetal tiene un papel preponderante, aportando elementos de decoración, sofisticación o simbolismo.
+    \n\n
+    La gestión de las zonas ajardinadas de la Alhambra y Generalife conlleva un minucioso proceso de seguimiento, con el objetivo de conservar y mantener sus valores y cualidades identitarios.
+    \n\n
+    El origen de los jardines de la Alhambra proviene del legado cultural de al-Ándalus. En la actualidad, los jardines del Conjunto Monumental son el resultado de la superposición de diversos periodos históricos que han ido dejando huella sobre el monumentoa lo largo del tiempo, un reflejo del paso de las distintas épocas y modas. Así es posible localizar jardines de diversos periodos históricos, que abarcan desde jardines medievales islámicos hasta jardines del siglo XXI.
+
+    </string>
+
 </resources>

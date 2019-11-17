@@ -1,6 +1,7 @@
 package com.example.alhambrainteractiva;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SensoresListener implements SensorEventListener {
+public class SensoresListener extends AppCompatActivity implements SensorEventListener {
     //Declaracion de variables para controlar los sensores anteriores y la secuencia para lanzar el asistente
     private long horaUltimaActualizacion;
     private int contMovimientos, movDetectado;
@@ -22,6 +23,7 @@ public class SensoresListener implements SensorEventListener {
     static final int RANGO_MINIMO = 186;// 0.75/4
     static final int MINIMA_ACC = 15;
     Context contexto;
+
     //se obtiene el contexto desde donde se instancia un objeto de la clase
     SensoresListener(Context context) {
         contexto = context;
@@ -97,6 +99,8 @@ public class SensoresListener implements SensorEventListener {
 
     }
     void lanzarAsistente(){
+      //  Intent intent = new Intent(SensoresListener.this,Asistente.class);
+       // startActivity(intent);
         Toast.makeText(contexto, "Aquí se lanzaría el asistente", Toast.LENGTH_SHORT).show();
     }
     private void modificarSonido(){

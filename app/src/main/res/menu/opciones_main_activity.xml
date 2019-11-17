@@ -16,16 +16,6 @@
 
         <menu>
             <item
-                android:id="@+id/Idioma"
-                android:title="Idioma"
-                android:icon="@drawable/ic_language"
-                app:showAsAction="never"/>
-            <item
-                android:id="@+id/Accesibilidad"
-                android:title="Accesibilidad"
-                android:icon="@drawable/ic_accessibility"
-                app:showAsAction="never"/>
-            <item
                 android:id="@+id/Info"
                 android:title="Informacion"
                 android:icon="@drawable/ic_info"
