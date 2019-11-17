@@ -126,7 +126,6 @@ public class CuestionarioInfantil extends AppCompatActivity {
             else incorrectas++;
         }
 
-        // TODO: Permitir traducción de este texto:
         String message =
                 String.format("Correctas: %d\nIncorrectas: %d\nNo contestadas: %d\n",
                         correctas, incorrectas, nocontestadas);
@@ -137,14 +136,12 @@ public class CuestionarioInfantil extends AppCompatActivity {
         builder.setCancelable(false);
         builder.setPositiveButton(R.string.finish, new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
+            public void onClick(DialogInterface dialog, int which) { finish();
             }
         });
         builder.setNegativeButton(R.string.start_over, new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                startOver();
+            public void onClick(DialogInterface dialog, int which) { startOver();
             }
         });
         builder.create().show();
