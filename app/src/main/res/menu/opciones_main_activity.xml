@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Este fichero se encarga del menu de opciones
+     que aparece en el Main Activity
+-->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Menu general -->
+    <item
+        android:id="@+id/Ajustes"
+        android:title="Ajustes"
+        android:icon="@drawable/ic_settings"
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/Info"
+                android:title="Informacion"
+                android:icon="@drawable/ic_info"
+                app:showAsAction="never"/>
+        </menu>
+    </item>
+</menu>

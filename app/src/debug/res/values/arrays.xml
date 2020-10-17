@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="SiglosHistoria" >
+        <item>IX-XII</item>
+        <item>XIII-XV</item>
+        <item>XVI-XVIII</item>
+        <item>XIX-XXI</item>
+    </string-array>
+    <string-array name="poblaciones" >
+        <item>@string/nombreCuerpoMilitar</item>
+        <item>@string/nombreSultan</item>
+        <item>@string/nombreSirvientes</item>
+        <item>@string/nombreArtesanos</item>
+    </string-array>
+    <string-array name="Naturaleza" >
+        <item>@string/nombreIntroNaturaleza</item>
+        <item>@string/nombreBio</item>
+        <item>@string/nombreBosques</item>
+        <item>@string/nombreHuertas</item>
+        <item>@string/nombreJardines</item>
+    </string-array>
+</resources>

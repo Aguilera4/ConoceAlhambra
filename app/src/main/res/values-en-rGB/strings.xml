@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Meet The Alhambra</string>
+    <string name="adulto">Adult Mode</string>
+    <string name="botonTutorial">How does this app work?</string>
+    <string name="infantil">Child Mode</string>
+    <string name="botonMapa">Map</string>
+    <string name="botonQR">QR Code Reader</string>
+    <string name="botonSociedad">Alhambra\'s Society</string>
+    <string name="botonNaturaleza">Alhambra\'s Nature</string>
+    <string name="botonHistoria">Alhambra\'s History</string>
+    <string name="botonArte">Alhambra\'s Art</string>
+    <string name="mensajeQR">Center the QR code</string>
+    <string name="version"><b><font fgcolor='#0000FF'>Version:</font></b> <font fgcolor='#000000'>1.0</font> </string>
+    <string name="autores"><b><font fgcolor="#0000FF"> Authors:</font></b> <font fgcolor="#000000"> \t\t Alberto Lejárraga Rubio  \t\t Christian Vigil Zamora  \t\t Francisco Cano Sampedro  \t\t Sergio Aguilera Ramírez </font></string>
+    <string name="aprender"><b>Learn</b></string>
+    <string name="question">Question</string>
+    <string name="check">Check</string>
+    <string name="correct">Very good!</string>
+    <string name="incorrect">Incorrect...</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="prev">Previous</string>
+    <string name="results">Results</string>
+    <string name="start_over">Start Over</string>
+
+    <string name="siglo">Centuries</string>
+    <string name="sigloA">The Arabs respected Roman cities and roads, expanding them and adding new foundations. In the 9th century there was news of constructions on the hill of Sabika, where the Alhambra would later be constructed, although it is believed that in the Roman period and even earlier there must have been some construction. After the civil war which followed the Caliphate of Córdoba (1031), until then the capital of the province of Granada, it moved from Elvira to Granada, with the Granada Taifa Kingdom of the Zirids. They established their court in the Cadima or Vieja Alcazaba, located in the Albaicín quarter.
+\n\n
+At its foot was a large population center, mainly Jewish, around which the city of Granada developed. The first minister, Samuel ibn Nagrella, reconstructed the abandoned buildings of the hill of Sabika and installed his Palace on it.
+\n\n
+In the 12th century, successive waves of Almoravids and Almohads caused various battles in Granada in the Alcazaba of Albaicín and the constructions on the hill of Sabika, this sometimes serving as a shelter for local Andalusian supporters and other North African invaders.
+    </string>
+    <string name="sigloB">
+Al-Ahmar, founder of the Nasrid dynasty, installed himself in the Antigua Alcazaba del Albaicín, drawing attention to the ruins on the hill of the Alhambra. He then decided to initiate its reconstruction and install his court in it, beginning the construction of the Alhambra that we know today.
+\n\n
+The Alhambra was a palace, citadel and fortress, residence of the Nasrid sultans and senior officials, court servants and elite soldiers, reaching its full splendor in the second half of the 14th century, coinciding with the sultanate of Yusuf I (1333-1354) and the second reign of Muhammad V (1362-1391).
+\n\n
+Granada, capital of the Nasrid kingdom, gradually received Islamic populations due to the advance of the Christian conquest. The city grew, adapting, creating new quarters and expanding its walls practically until being conquered at the end of the 15th century.
+    </string>
+    <string name="sigloC">
+From 1492, the Alhambra was established as the Royal Household with a separate jurisdiction of which Tendilla was in charge. The Catholic Monarchs ordered extensive repairs, mainly using Moorish craftspeople.
+\n\n
+In 1526, Emperor Carlos V decided to construct the palace which bears his name, along with other very important constructions in a Roman Renaissance style. The house of Austria continued from Felipe II (1556-1598) and his successors in charge of the conservation of the Alhambra, admired by humanists and artists such as Andrea Navaggiero (1524), ambassador of Venice in the Court of Carlos V.
+\n\n
+In the first decades of the 18th century, Felipe V (1700-1746) removed the Marqués de Mondéjar, heir of the Conde de Tendilla, as mayor, beginning a period of abandonment practically until the reign of Carlos IV (1788-1808).
+    </string>
+    <string name="sigloD">
+The Napoleonic occupation was a negative episode for the Alhambra, due to the demolition in 1812, upon the withdrawal of the French army. Only the courage of a Spanish soldier could prevent its almost total destruction.
+\n\n
+A period of recognition of the status of the monument, actively supported by Washington Irving (1783-1859) added to society’s growing interest in the gardens of the Alhambra and the Orientalism that evoked romance in the imagination, very well reflected in the visual arts of the time.
+\n\n
+With the revolution of 1868, the Alhambra was disconnected from the Crown and became property of the State, being declared a “national monument” in 1870.
+\n\n
+With the arrival of the 20th century, the city of the Alhambra was entrusted to a Commission (1905), replaced in 1913 by a Trust which was then entrusted to the Directorate General of Fine Arts in 1915. In 1944, a new Trust was created, maintained until the transfer of the cultural functions and services of the State to the Autonomous Community of Andalusia.
+    </string>
+    <string name="patronato">Info obtained from http://www.alhambra-patronato.es/en</string>
+    <string name="nombreCuerpoMilitar">The Militar Body</string>
+    <string name="cuerpoMilitar">
+        A military complex for elite guard guaranteed the interior security of the Sultan, his family and the Government Institutions from the Alcazaba. The Alcazaba was like an independent military city, strategically located and cleverly connected with the rest of the Alhambra, where the guards lived with their families, with homes, a water cistern and baths, as in any quarter of a city.
+    </string>
+    <string name="nombreSultan">The Sultan and his closest family</string>
+    <string name="sultanYFamilia">
+    There was a palatial area reserved for the life of the Sultan and his closest family. Here there were administrative offices, with a clearly formal layout, becoming more private and palatial depending on their departments. There were also spaces for Surah meetings and Councils of Viziers (ministers) and for public audiences. The Sultan called courtly parties coinciding with notable celebrations in the Muslim or State calendar.
+    \n\n
+    In this palatine area, several palaces are set out, built in different periods, either through the adaptation and redecoration of their predecessor, or through the construction or addition of a new palace on its land. A street, with access to different areas of the palaces, would also serve to separate and isolate them from the rest of the Alhambra.
+    </string>
+    <string name="nombreSirvientes">The Court servants</string>
+    <string name="sirvientes">
+    Serving this court was the Alhambra Medina, a whole city designed to cover any need of the Palace. Organized around a main street ascending slightly from west to east, the city had public baths, a mosque, shops, etc.    \n\n
+    \n\n
+    In the lower are, behind the Puerta del Vino which served as the main entrance, there were houses, some very important, where civil servants and Court servants lived, small water cisterns and public spaces. Toward the middle of the street and along its sides are two large areas considered true palaces: the Hall of the Abencerrajes and what was formerly the Convent of San Francisco.    </string>
+    <string name="nombreArtesanos">The artisans</string>
+    <string name="artesanos">
+    The upper area of the city was occupied by a range of small traditional industries: furnaces for glass and ceramic, a tannery for leather, waterwheels and even a mint for making currency.
+    \n\n
+    The Acequia del Rey (or Sultan) entered the Alhambra through this area, through an aqueduct and a hatch, descending parallel to Calle Real, distributing water to the whole complex through countless channels. Small streets, alleys and small shelters made up the urban landscape of the cit.    \n\n
+    </string>
+
+    <string name="nombreIntroNaturaleza">Introduction</string>
+    <string name="introNaturaleza">
+The Monumental Complex of the Alhambra and Generalife represents a valuable cultural landscape, a large environmental unit, made up of different units of vegetation, capable of accommodating rich and varied biodiversity.
+\n\n
+The unique cultural landscape of the Alhambra is the result of the interaction of people and the natural environment over time, whose expression is a territory perceived and valued for its cultural qualities, resulting from an extensive process, and also support of the identity of a community.
+\n\n
+The Green Alhambra is the living part (flora and fauna) of the monumental complex and the natural territory (land) on which it stands, the relationships between different organims, the ecosystem or set of ecosystems of the cultural landscape of the Alhambra. The gardens, vegetable gardens and croplands, and forests.
+    </string>
+    <string name="nombreBio">Biodiversity</string>
+    <string name="bio">
+The Green Alhambra is therefore the living part (flora and fauna) of the monumental complex and the natural territory (land) on which it stands, the relationships between the different organisms; that is, the ecosystem or set of ecosystems of the cultural landscape of the Alhambra.
+\n\n
+The Monumental Complex of the Alhambra and Generalife has a rich heritage which goes beyond its architectural structure and the decorative elements that embellish it.
+\n\n
+Nature brings together values such as heritage, the landscape and biodiversity, creating a perfect symbiosis between them and making it possible to undertake a comprehensive protection and conservation program.
+\n\n
+The Green Alhambra is a set of ecosystems capable of performing important environmental services, services which nature exudes and provides society, such as regulation services (improved air quality, climate regulation, soil retention, groundwater recharge, etc.) and cultural services (spiritual enjoyment, leisure activities, etc.).
+    </string>
+    <string name="nombreBosques">Forests</string>
+    <string name="bosques">
+The surroundings of the Alhambra and Generalife accommodate over 150,000 square meters (15 ha.) of leafy forests of great leisure and scenic value, which complement and enrich the artistic and cultural heritage of the monumental complex. These mass spaces of vegetation also play an important role in controlling erosion, improving air quality and the surrounding environment (temperature control, O2 emission, etc.) as well as serving as a shelter for varied fauna and thereby contributing to the conservation and development of biological diversity in the middle of the city of Granada.
+\n\n
+They are mainly divided between four different units: El Bosque de La Alhambra or San Pedro, La Alameda de la Alhambra or Gomérez, La Umbría del Generalife and La Dehesa del Generalife.
+\n\n
+El Bosque de la Alhambra, also known as the forest of San Pedro, is a cultivated planting located on the north slope of the walled complex of the Alhambra. It is an enclosed, shady forest, fully paralleled by a garden wall and by the north wall of the Alhambra. Its origin seems to date back to the medieval period. According to Pérez de Hita, this forest was created to accommodate a hunting ground intended for the use and enjoyment of the Sultan Muley Hazen.
+\n\n
+Its use for hunting would last until the start of the 17 th century, as attested by numerous quotes.
+    </string>
+    <string name="nombreHuertas">Vegetable Gardens</string>
+    <string name="huertas">
+Next to the palatial city of the Alhambra is the garden of the Generalife. Despite today being part of the same visit and perceived as an integrated complex, thanks to the modern Water Bridge that connects them, originally they were two completely different worlds. Firstly, there was the city of the Alhambra, a military, political and public space, with its Alcazaba, Palaces and Medina; and secondly, the garden of the Generalife, a space for the leisure and enjoyment of the Sultan, a private space with palatial rooms, gardens, cool orchards in summer and productive vegetable gardens for the production of abundant fruits and vegetables – a paradise on earth.
+\n\n
+The vegetable gardens offset the steep slope of the ravine on which they lie with terraces or patios separated by steep slopes. The canals adapt to the slight slope of each terrace and pass from one to another, saving the height difference for their ends. The agricultural landscape of the vegetable gardens reflects its historical, cultural and scenic values, present since its creation and preserved over time.
+    </string>
+    <string name="nombreJardines">Gardens</string>
+    <string name="jardines">
+    The Monumental Complex of the Alhambra and Generalife has extensive gardened land of around 12 ha. Cultivated spaces, gardens, palaces and other areas with buildings create a perfect symbiosis capable of generating spaces with a changing, temporary nature, where the vegetable component plays a predominant role, providing decorative elements, sophistication and symbolism.
+    \n\n
+    The management of the gardened areas of the Alhambra and Generalife involves a meticulous monitoring process, with the objective of preserving and maintaining its values and identifying qualities.
+    \n\n
+    The origin of the gardens of the Alhambra originates with the cultural legacy of Al-Andalus. Currently, the gardens of the Monumental Complex are the results of the overlapping of different historical periods which left their mark on the monument over time, a reflection of the passage of different periods and fashions. It is therefore possible to locate gardens from different historical periods, ranging from medieval Islamic gardens to 21 st century gardens.
+    </string>
+
+</resources>
